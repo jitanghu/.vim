@@ -6,7 +6,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+
+set rtp+=~/.vim/fzf
+Plugin 'junegunn/fzf.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
  
@@ -27,3 +29,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " 关闭最后一个文件时关闭vim，即便NERDTree仍然打开
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" fzf设置
+map <C-p> :Files<CR>
