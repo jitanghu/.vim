@@ -18,3 +18,7 @@
 	path = bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 	branch = master
+[submodule "bundle/vim"]
+	path = bundle/vim
+	url = git@github.com:dracula/vim.git
+	branch = master

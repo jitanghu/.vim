@@ -11,12 +11,11 @@ set rtp+=~/.vim/fzf
 Plugin 'junegunn/fzf.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'dracula/vim'
  
 call vundle#end()
 filetype plugin indent on
 
-syntax on
-set nu
 
 " lightline配置
 set laststatus=2
@@ -31,3 +30,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " fzf设置
 map <C-p> :Files<CR>
+
+syntax on
+set nu
+colorscheme molokai
+
+if has("gui_running")
+  if has("gui_macvim")
+    set guifont=Menlo\ Regular:h12
+  endif
+endif
