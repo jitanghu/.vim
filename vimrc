@@ -1,57 +1,44 @@
 set nocompatible
-filetype off
+let mapleader = " "
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vim-plug begin
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'preservim/nerdtree'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
-set rtp+=~/.vim/fzf
-Plugin 'junegunn/fzf.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'dracula/vim'
-Plugin 'ajh17/VimCompletesMe'
-Plugin 'majutsushi/tagbar' 
-Plugin 'scrooloose/nerdtree'
+call plug#end()
+" vim-plug end
 
-call vundle#end()
-filetype plugin indent on
-
-
-" lightline配置
-set laststatus=2
-
-" fzf设置
-map <C-p> :Files<CR>
-
-syntax on
 set nu
 set hls
-color dracula
 
 if has("gui_running")
   if has("gui_macvim")
-    set guifont=Menlo\ Regular:h12
+    set guifont=JetBrainsMono\ Nerd\ Font:h13
   endif
 endif
 
-" 自定义mapping
-map <leader><SPACE> :noh<CR>
-map <F8> :TagbarToggle<CR>
+" nerdtree配置
+nnoremap <leader>e :NERDTreeToggle<CR>
 
+" leaderF
+nnoremap <leader>f :Leaderf<CR>
+let g:Lf_ShortcutF = '<C-P>'
 
 set backspace=2
-
-" 设置NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-map <C-n> :NERDTreeToggle<CR>
+" 设置增量搜索
+set incsearch
 
 " 设置缩进
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
+
+" keymap
+inoremap jk <ESC>
+vnoremap jk <ESC>
+
+" colorscheme
+colorscheme molokai
