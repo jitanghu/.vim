@@ -39,6 +39,7 @@ set expandtab
 " keymap
 inoremap jk <ESC>
 vnoremap jk <ESC>
+nnoremap <leader>nh :noh<CR>
 
 " colorscheme
-colorscheme molokai
+colorscheme gruvbox
