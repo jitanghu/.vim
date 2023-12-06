@@ -6,6 +6,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 " vim-plug end
@@ -42,4 +43,5 @@ vnoremap jk <ESC>
 nnoremap <leader>nh :noh<CR>
 
 " colorscheme
+set background=dark
 colorscheme gruvbox
