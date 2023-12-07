@@ -45,3 +45,5 @@ nnoremap <leader>nh :noh<CR>
 " colorscheme
 set background=dark
 colorscheme gruvbox
+
+set mouse=a
